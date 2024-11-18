@@ -1,0 +1,24 @@
+{
+  "name": "submisisonmlgc-hafizikhsan",
+  "version": "1.0.0",
+  "description": "project submission mlgc hafiz",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server/server.js",
+    "start:dev": "nodemon ./src/server/server.js"
+  },
+  "author": "Muhammad Hafiz Ikhsan",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/firestore": "^7.10.0",
+    "@hapi/hapi": "^21.3.12",
+    "@tensorflow/tfjs-node": "^3.21.1",
+    "dotenv": "^16.4.5"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
