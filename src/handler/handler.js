@@ -39,10 +39,18 @@ async function getDiagnoseHistories(request, h) {
   const document = db.collection('predictions');
   const snapshot = await document.get();
 
-  const data = snapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-  }));
+  const data = snapshot.docs.map((doc) => {
+    const { result, createdAt, suggestion } = doc.data();
+    return {
+      id: doc.id,
+      history: {
+        result,
+        createdAt,
+        suggestion,
+        id: doc.id,
+      },
+    };
+  });
 
   const response = h.response({
     status: 'success',
